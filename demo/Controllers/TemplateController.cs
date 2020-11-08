@@ -48,8 +48,17 @@ namespace demo.Controllers
             profile.UserData.Description = "Przykładowy opis";
             profile.UserData.Name = "Nazwa";
             profile.UserData.Surname = "Nazwisko";
+            profile.UserData.Country = "Kraj";
             
             return View(profile);
+        }
+
+        [Route("ui-helper")]
+        [HttpPost]
+        public IActionResult TestUIHelperSubmit(UserData userData)
+        {
+            _logger.LogCritical(userData.ToString());
+            return RedirectToAction(nameof(TestUIHelper));
         }
     }
 }
