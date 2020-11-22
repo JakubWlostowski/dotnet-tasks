@@ -249,3 +249,5 @@ C:\Users\Kuba\si.net\demo\obj\Debug\netcoreapp3.1\staticwebassets\demo.StaticWeb
 C:\Users\Kuba\si.net\demo\obj\Debug\netcoreapp3.1\demo.dll
 C:\Users\Kuba\si.net\demo\obj\Debug\netcoreapp3.1\demo.pdb
 C:\Users\Kuba\si.net\demo\obj\Debug\netcoreapp3.1\demo.genruntimeconfig.cache
+C:\Users\Kuba\si.net\demo\obj\Debug\netcoreapp3.1\Razor\Views\Validation\Index.cshtml.g.cs
+C:\Users\Kuba\si.net\demo\obj\Debug\netcoreapp3.1\Razor\Views\Validation\SelfValidatableFormAction.cshtml.g.cs

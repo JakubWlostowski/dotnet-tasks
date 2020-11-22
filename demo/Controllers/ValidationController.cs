@@ -1,5 +1,8 @@
 using demo.Domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace demo.Controllers
 {
@@ -21,12 +24,26 @@ namespace demo.Controllers
                 return View(viewName: "Index", form);
             }
 
-            if (form.File != null)
+            if (form.FilesList != null)
             {
-                System.Console.WriteLine($"Wielkość pliku {form.File.Length}");
-                System.Console.WriteLine($"Nazwa pliku {form.File.Name}");
-            }
-            // zapis 
+                var dirPath = Path.Combine(Directory.GetCurrentDirectory(), "SavedFiles");
+                if (!Directory.Exists(dirPath))
+                {
+                    Directory.CreateDirectory(dirPath);
+                }
+
+                foreach (var file in form.FilesList)
+                {
+                    Task.Run(async () => {                 
+                        var path = Path.Combine(dirPath, file.FileName);
+                        System.Console.WriteLine($"Wielkość pliku {file.Length} | Nazwa pliku {file.FileName}");
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+                    });
+                }
+            } 
 
             return RedirectToAction(nameof(Index));
         }
