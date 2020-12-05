@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\demo2",
+    "\\demo2\\Controllers",
+    "\\demo2\\Migrations",
+    "\\demo2\\Persistance",
+    "\\demo2\\Persistance\\Entities",
+    "\\demo2\\Properties",
+    "\\demo2\\Tools",
+    "\\demo2\\Views",
+    "\\demo2\\Views\\Authentication"
+  ],
+  "SelectedNode": "\\demo2\\Views\\Authentication\\Login.cshtml",
+  "PreviewInSolutionExplorer": false
+}
